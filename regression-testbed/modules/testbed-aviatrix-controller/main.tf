@@ -54,7 +54,7 @@ resource "aws_security_group" "sg" {
   from_port   = 22
   to_port     = 22
   protocol    = "tcp"
-  cidr_blocks = [var.sg_source_ip]
+  cidr_blocks = ["0.0.0.0/0", var.sg_source_ip]
   }
   ingress {
   # HTTPS
@@ -86,11 +86,11 @@ module "aviatrix-controller-build" {
 # Initialize Aviatrix controller
 module "aviatrix-controller-init" {
   source              = "github.com/AviatrixSystems/terraform-modules.git//aviatrix-controller-initialize?ref=terraform_0.12"
-  admin_email         = var.admin_email 
+  admin_email         = var.admin_email
   admin_password      = var.admin_password
   private_ip          = module.aviatrix-controller-build.private_ip
   public_ip           = module.aviatrix-controller-build.public_ip
-  access_account_name = var.access_account 
+  access_account_name = var.access_account
   aws_account_id      = data.aws_caller_identity.current.account_id
-	customer_license_id = var.customer_id 
+	customer_license_id = var.customer_id
 }
