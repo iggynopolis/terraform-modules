@@ -10,7 +10,8 @@ module "regression-testbed" {
   # AWS VPC setup
   vpc_count                   = <<input number of vpcs to create in each region>>
   vpc_public_key              = "<<your public key to access ubuntu instances>>"
-  hostnum                     = <<input instance private ip hostnum>>
+  pub_hostnum                     = <<input instance private ip hostnum>>
+  pri_hostnum                     = <<input instance private ip hostnum>>
 
   # US West 1
   vpc_cidr_west1              = [<<insert cidrs>>]

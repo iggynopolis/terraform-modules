@@ -55,7 +55,8 @@ module "aws-vpc-west1" {
   }
   vpc_count             = var.vpc_count_west1
   resource_name_label   = var.resource_name_label
-  hostnum               = var.hostnum
+	pub_hostnum						= var.pub_hostnum
+  pri_hostnum           = var.pri_hostnum
   vpc_cidr              = var.vpc_cidr_west1
   pub_subnet1_cidr      = var.pub_subnet1_cidr_west1
   pub_subnet2_cidr      = var.pub_subnet2_cidr_west1
@@ -72,7 +73,8 @@ module "aws-vpc-west2" {
   }
   vpc_count             = var.vpc_count_west2
   resource_name_label   = var.resource_name_label
-  hostnum               = var.hostnum
+	pub_hostnum						= var.pub_hostnum
+  pri_hostnum           = var.pri_hostnum
   vpc_cidr              = var.vpc_cidr_west2
   pub_subnet1_cidr      = var.pub_subnet1_cidr_west2
   pub_subnet2_cidr      = var.pub_subnet2_cidr_west2
@@ -89,7 +91,8 @@ module "aws-vpc-east1" {
   }
   vpc_count             = var.vpc_count_east1
   resource_name_label   = var.resource_name_label
-  hostnum               = var.hostnum
+	pub_hostnum						= var.pub_hostnum
+  pri_hostnum           = var.pri_hostnum
   vpc_cidr              = var.vpc_cidr_east1
   pub_subnet1_cidr      = var.pub_subnet1_cidr_east1
   pub_subnet2_cidr      = var.pub_subnet2_cidr_east1
@@ -106,7 +109,8 @@ module "aws-vpc-east2" {
   }
   vpc_count             = var.vpc_count_east2
   resource_name_label   = var.resource_name_label
-  hostnum               = var.hostnum
+	pub_hostnum						= var.pub_hostnum
+  pri_hostnum           = var.pri_hostnum
   vpc_cidr              = var.vpc_cidr_east2
   pub_subnet1_cidr      = var.pub_subnet1_cidr_east2
   pub_subnet2_cidr      = var.pub_subnet2_cidr_east2

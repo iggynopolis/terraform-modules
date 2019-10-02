@@ -15,8 +15,7 @@ This Terraform configuration creates an AWS VPC testbed environment with ubuntu 
 
 ### Usage
 
-1. ```terraform init``` to initialize the workspace with .tf files
-2. Create testbed.tf and testbed_outputs.tf
+1. Create testbed.tf and testbed_outputs.tf
 
 ```
 ## testbed.tf
@@ -31,7 +30,8 @@ module "regression-testbed" {
 
   # AWS VPC setup
   vpc_public_key              = "<<your public key to access ubuntu instances>>"
-  hostnum                     = <<input instance private ip hostnum>>
+  pub_hostnum                 = <<input instance private ip hostnum>>
+  pri_hostnum                 = <<input instance private ip hostnum>>
 
   # US West 1
   vpc_count_west1             = <<input number of vpcs>>
@@ -121,6 +121,8 @@ output "windows_key" {
   value = module.regression-testbed.windows_key
 }
 ```
+
+2. ```terraform init``` to initialize the workspace with .tf files
 
 3. Initial ```terraform apply```
 
@@ -220,9 +222,13 @@ The label for the resource name.
 
 Public key used for creating key pair for all instances.
 
-- **hostnum**
+- **pub_hostnum**
 
-Number to be used for ubuntu instance private ip host part, Must be a whole number than an be represented as a binary integer.
+Number to be used for public ubuntu instance private ip host part. Must be a whole number that can be represented as a binary integer.
+
+- **pri_hostnum**
+
+Number to be used for private ubuntu instance private ip host part. Must be a whole number that can be represented as a binary integer.
 
 - **vpc_count_west1**
 - **vpc_count_west2**

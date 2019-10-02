@@ -102,7 +102,7 @@ resource "aws_instance" "public_instance" {
 	disable_api_termination			= var.termination_protection
 	associate_public_ip_address = true
 	subnet_id										= aws_subnet.public_subnet1[count.index].id
-	private_ip									= cidrhost(aws_subnet.public_subnet1[count.index].cidr_block, var.hostnum)
+	private_ip									= cidrhost(aws_subnet.public_subnet1[count.index].cidr_block, var.pub_hostnum)
 	vpc_security_group_ids			= [aws_security_group.sg[count.index].id]
 	key_name										= aws_key_pair.key_pair.key_name
 	tags	= {
@@ -118,7 +118,7 @@ resource "aws_instance" "private_instance" {
 	disable_api_termination     = var.termination_protection
 	associate_public_ip_address = true
   subnet_id                   = aws_subnet.private_subnet[count.index].id
-	private_ip									= cidrhost(aws_subnet.private_subnet[count.index].cidr_block, var.hostnum)
+	private_ip									= cidrhost(aws_subnet.private_subnet[count.index].cidr_block, var.pri_hostnum)
 	vpc_security_group_ids			= [aws_security_group.sg[count.index].id]
 	key_name										= aws_key_pair.key_pair.key_name
   tags  = {

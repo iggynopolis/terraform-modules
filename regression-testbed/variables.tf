@@ -30,9 +30,13 @@ variable "vpc_public_key" {
   type        = string
   description = "Public key used for creating key pair for all instances."
 }
-variable "hostnum" {
+variable "pub_hostnum" {
   type        = number
-  description = "Number to be used for ubuntu instance private ip host part. Must be a whole number that can be represented as a binary integer."
+  description = "Number to be used for public ubuntu instance private ip host part. Must be a whole number that can be represented as a binary integer."
+}
+variable "pri_hostnum" {
+  type        = number
+  description = "Number to be used for private ubuntu instance private ip host part. Must be a whole number that can be represented as a binary integer."
 }
 
 # US-WEST-1 Region
