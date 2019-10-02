@@ -30,11 +30,11 @@ module "regression-testbed" {
   aws_primary_acct_secret_key = "<<your aws primary secret key>>"
 
   # AWS VPC setup
-  vpc_count                   = <<input number of vpcs to create in each region>>
   vpc_public_key              = "<<your public key to access ubuntu instances>>"
   hostnum                     = <<input instance private ip hostnum>>
 
   # US West 1
+  vpc_count_west1             = <<input number of vpcs>>
   vpc_cidr_west1              = [<<insert cidrs>>]
   pub_subnet1_cidr_west1      = [<<insert cidrs>>]
   pub_subnet2_cidr_west1      = [<<insert cidrs>>]
@@ -43,6 +43,7 @@ module "regression-testbed" {
   ubuntu_ami_west1            = "<<insert ami>>"
 
   # US West 2
+  vpc_count_west2             = <<input number of vpcs>>
   vpc_cidr_west2              = [<<insert cidrs>>]
   pub_subnet1_cidr_west2      = [<<insert cidrs>>]
   pub_subnet2_cidr_west2      = [<<insert cidrs>>]
@@ -50,12 +51,15 @@ module "regression-testbed" {
   ubuntu_ami_west2            = "<<insert ami>>"
 
   # US East 1
+  vpc_count_east1             = <<input number of vpcs>>
   vpc_cidr_east1              = [<<insert cidrs>>]
   pub_subnet1_cidr_east1      = [<<insert cidrs>>]
   pub_subnet2_cidr_east1      = [<<insert cidrs>>]
   pri_subnet_cidr_east1       = [<<insert cidrs>>]
   ubuntu_ami_east1            = "<<insert ami>>"
 
+  # US East 2
+  vpc_count_east2             = <<input number of vpcs>>
   vpc_cidr_east2              = [<<insert cidrs>>]
   pub_subnet1_cidr_east2      = [<<insert cidrs>>]
   pub_subnet2_cidr_east2      = [<<insert cidrs>>]
@@ -208,10 +212,6 @@ AWS primary account's secret key.
 
 Whether to enable termination protection for ec2 instances.
 
-- **vpc_count**
-
-The number of vpcs to create in the given AWS region.
-
 - **resource_name_label**
 
 The label for the resource name.
@@ -223,6 +223,13 @@ Public key used for creating key pair for all instances.
 - **hostnum**
 
 Number to be used for ubuntu instance private ip host part, Must be a whole number than an be represented as a binary integer.
+
+- **vpc_count_west1**
+- **vpc_count_west2**
+- **vpc_count_east1**
+- **vpc_count_east2**
+
+The number of vpcs to create in the given AWS region.
 
 - **vpc_cidr_west1**
 - **vpc_cidr_west2**

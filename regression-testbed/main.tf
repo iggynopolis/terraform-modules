@@ -53,14 +53,14 @@ module "aws-vpc-west1" {
   providers = {
     aws = aws.west1
   }
-  vpc_count             = var.vpc_count
+  vpc_count             = var.vpc_count_west1
   resource_name_label   = var.resource_name_label
   hostnum               = var.hostnum
   vpc_cidr              = var.vpc_cidr_west1
   pub_subnet1_cidr      = var.pub_subnet1_cidr_west1
   pub_subnet2_cidr      = var.pub_subnet2_cidr_west1
   pri_subnet_cidr       = var.pri_subnet_cidr_west1
-  ubuntu_ami            = var.ubuntu_ami_west1 
+  ubuntu_ami            = var.ubuntu_ami_west1
   public_key            = var.vpc_public_key
 	termination_protection = var.termination_protection
 }
@@ -70,14 +70,14 @@ module "aws-vpc-west2" {
   providers = {
     aws = aws.west2
   }
-  vpc_count             = var.vpc_count
+  vpc_count             = var.vpc_count_west2
   resource_name_label   = var.resource_name_label
   hostnum               = var.hostnum
   vpc_cidr              = var.vpc_cidr_west2
   pub_subnet1_cidr      = var.pub_subnet1_cidr_west2
   pub_subnet2_cidr      = var.pub_subnet2_cidr_west2
   pri_subnet_cidr       = var.pri_subnet_cidr_west2
-  ubuntu_ami            = var.ubuntu_ami_west2 
+  ubuntu_ami            = var.ubuntu_ami_west2
   public_key            = var.vpc_public_key
 	termination_protection = var.termination_protection
 }
@@ -87,14 +87,14 @@ module "aws-vpc-east1" {
   providers = {
     aws = aws.east1
   }
-  vpc_count             = var.vpc_count
+  vpc_count             = var.vpc_count_east1
   resource_name_label   = var.resource_name_label
   hostnum               = var.hostnum
   vpc_cidr              = var.vpc_cidr_east1
   pub_subnet1_cidr      = var.pub_subnet1_cidr_east1
   pub_subnet2_cidr      = var.pub_subnet2_cidr_east1
   pri_subnet_cidr       = var.pri_subnet_cidr_east1
-  ubuntu_ami            = var.ubuntu_ami_east1 
+  ubuntu_ami            = var.ubuntu_ami_east1
   public_key            = var.vpc_public_key
 	termination_protection = var.termination_protection
 }
@@ -104,14 +104,14 @@ module "aws-vpc-east2" {
   providers = {
     aws = aws.east2
   }
-  vpc_count             = var.vpc_count
+  vpc_count             = var.vpc_count_east2
   resource_name_label   = var.resource_name_label
   hostnum               = var.hostnum
   vpc_cidr              = var.vpc_cidr_east2
   pub_subnet1_cidr      = var.pub_subnet1_cidr_east2
   pub_subnet2_cidr      = var.pub_subnet2_cidr_east2
   pri_subnet_cidr       = var.pri_subnet_cidr_east2
-  ubuntu_ami            = var.ubuntu_ami_east2 
+  ubuntu_ami            = var.ubuntu_ami_east2
   public_key            = var.vpc_public_key
 	termination_protection = var.termination_protection
 }
@@ -121,10 +121,10 @@ module "aviatrix-controller" {
   providers = {
     aws = aws.controller
   }
-  vpc_cidr        = var.controller_vpc_cidr 
+  vpc_cidr        = var.controller_vpc_cidr
   subnet_cidr     = var.controller_subnet_cidr
   sg_source_ip    = var.controller_sg_source_ip
-  public_key      = var.controller_public_key 
+  public_key      = var.controller_public_key
   admin_email     = var.admin_email
   admin_password  = var.admin_password
   access_account  = var.access_account

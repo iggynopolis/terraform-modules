@@ -25,12 +25,7 @@ variable "resource_name_label" {
 	description	= "The label for the resouce name."
 }
 
-# AWS VPC 
-
-variable "vpc_count" {
-  type        = number
-  description = "The number of vpcs to create in the given aws region."
-}
+# AWS VPC
 variable "vpc_public_key" {
   type        = string
   description = "Public key used for creating key pair for all instances."
@@ -41,6 +36,10 @@ variable "hostnum" {
 }
 
 # US-WEST-1 Region
+variable "vpc_count_west1" {
+  type        = number
+  description = "The number of vpcs to create in the given aws region."
+}
 variable "vpc_cidr_west1" {
   type        = list(string)
   description = "The cidr for a vpc."
@@ -63,6 +62,10 @@ variable "ubuntu_ami_west1" {
 }
 
 # US-WEST-2 Region
+variable "vpc_count_west2" {
+  type        = number
+  description = "The number of vpcs to create in the given aws region."
+}
 variable "vpc_cidr_west2" {
   type        = list(string)
   description = "The cidr for a vpc."
@@ -85,6 +88,10 @@ variable "ubuntu_ami_west2" {
 }
 
 # US-EAST-1 Region
+variable "vpc_count_east1" {
+  type        = number
+  description = "The number of vpcs to create in the given aws region."
+}
 variable "vpc_cidr_east1" {
   type        = list(string)
   description = "The cidr for a vpc."
@@ -107,6 +114,10 @@ variable "ubuntu_ami_east1" {
 }
 
 # US-EAST-2 Region
+variable "vpc_count_east2" {
+  type        = number
+  description = "The number of vpcs to create in the given aws region."
+}
 variable "vpc_cidr_east2" {
   type        = list(string)
   description = "The cidr for a vpc."
