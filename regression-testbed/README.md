@@ -346,7 +346,7 @@ Outputs the cidr for all subnets in the given regions.
 - **us-east-1_ubuntu_public_ip**
 - **us-east-2_ubuntu_public_ip**
 
-Outputs the public IP of the ubuntu instances in the given regions.
+Outputs the public IP of the public ubuntu instances in the given regions.
 
 - **us-west-1_ubuntu_private_ip**
 - **us-west-2_ubuntu_private_ip**

@@ -92,7 +92,7 @@ Name of the Ubuntu instances.
 
 - **ubuntu_public_ip**
 
-Public IP of the Ubuntu instances.
+Public IP of the public Ubuntu instance.
 
 - **ubuntu_private_ip**
 
