@@ -159,7 +159,7 @@ resource "aws_security_group" "sg" {
 	}
 }
 
-resource "aws_eip" "public_eip" {
+resource "aws_eip" "eip" {
 	count			= var.vpc_count
 	instance	= aws_instance.public_instance[count.index].id
 	vpc				= true
