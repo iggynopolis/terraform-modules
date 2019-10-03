@@ -9,17 +9,10 @@ variable "aws_primary_acct_secret_key" {
   type        = string
   description = "AWS primary account's secret key."
 }
-
-variable "controller_region" {
-	type				= string
-	description	= "Region to launch Aviatrix controller."
-}
-
 variable "termination_protection" {
 	type				= bool
 	description = "Whether to enable termination protection for ec2 instances."
 }
-
 variable "resource_name_label" {
 	type				= string
 	description	= "The label for the resouce name."
@@ -144,6 +137,10 @@ variable "ubuntu_ami_east2" {
 }
 
 # Aviatrix Controller
+variable "controller_region" {
+	type				= string
+	description	= "Region to launch Aviatrix controller."
+}
 variable "controller_vpc_cidr" {
   type          = string
   description   = "AWS VPC cidr being created for the Aviatrix controller."
@@ -178,6 +175,10 @@ variable "customer_id" {
 }
 
 # Windows instance
+variable "windows_region" {
+	type				= string
+	description	= "Region to launch Windows instance."
+}
 variable "windows_vpc_cidr" {
   type          = string
   description   = "AWS VPC cidr being created for the Windows instance."
