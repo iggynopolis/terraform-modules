@@ -75,7 +75,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_eip" "eip" {
- instance  = aws_instance.windows_instance.id
+ instance  = aws_instance.instance.id
  vpc       = true
  tags  = {
    Name      = "${var.resource_name_label}_windows-eip"
