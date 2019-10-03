@@ -45,7 +45,7 @@ resource "aws_key_pair" "key_pair" {
   public_key      = var.public_key
 }
 
-resource "aws_security_group" "windows_sg" {
+resource "aws_security_group" "sg" {
   name        = "allow_rdp"
   description = "Allow RDP to windows instance"
   vpc_id      = aws_vpc.vpc.id
@@ -62,7 +62,7 @@ resource "aws_security_group" "windows_sg" {
 }
 
 # Launch windows instance
-resource "aws_instance" "windows_instance" {
+resource "aws_instance" "instance" {
  ami                     = var.ami
  instance_type           = "t2.medium"
  disable_api_termination = var.termination_protection
