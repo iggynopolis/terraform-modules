@@ -55,6 +55,10 @@ module "regression-testbed" {
   customer_id                 = "<<insert your license id>>"
 
   # Windows instance
+  windows_region              = "<<insert region to launch windows instance>>"
+  windows_vpc_cidr            = "<<insert vpc cidr for windows instance>>"
+  windows_subnet_cidr         = "<<insert subnet cidr for windows instance>>"
+  windows_public_key          = "<<insert public key to access windows instance>>"
   windows_ami                 = "<<insert windows ami>>"
   windows_sg_source_ip        = "<<insert source ip>>"
 }

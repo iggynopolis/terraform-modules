@@ -80,10 +80,10 @@ module "regression-testbed" {
   customer_id                 = "<<insert your license id>>"
 
   # Windows instance
-  windows_region           = "<<insert region to launch windows instance>>"
-  windows_vpc_cidr         = "<<insert vpc cidr for windows instance>>"
-  windows_subnet_cidr      = "<<insert subnet cidr for windows instance>>"
-  windows_public_key       = "<<insert your public key to access windows instance>>""
+  windows_region              = "<<insert region to launch windows instance>>"
+  windows_vpc_cidr            = "<<insert vpc cidr for windows instance>>"
+  windows_subnet_cidr         = "<<insert subnet cidr for windows instance>>"
+  windows_public_key          = "<<insert public key to access windows instance>>
   windows_ami                 = "<<insert windows ami>>"
   windows_sg_source_ip        = "<<insert windows instance source ip>>"
 }
@@ -106,7 +106,7 @@ output "us-east-2" {
   value = [module.regression-testbed.east2_vpc_info, module.regression-testbed.east2_subnet_info, module.regression-testbed.east2_ubuntu_info]
 }
 
-# Aviatrix windows
+# Aviatrix controller
 output "controller_public_ip" {
  value = module.regression-testbed.controller_public_ip
 }
