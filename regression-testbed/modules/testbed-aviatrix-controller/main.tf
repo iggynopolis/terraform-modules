@@ -4,7 +4,7 @@
 resource "aws_vpc" "vpc" {
   cidr_block  = var.vpc_cidr
   tags  = {
-    Name      = "controller_vpc"
+    Name      = "${var.resource_name_label}_controller_vpc"
   }
 }
 
@@ -12,14 +12,14 @@ resource "aws_subnet" "public_subnet" {
   vpc_id      = aws_vpc.vpc.id
   cidr_block  = var.subnet_cidr
   tags  = {
-    Name      = "controller_vpc-public_subnet"
+    Name      = "${var.resource_name_label}_controller-public_subnet"
   }
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id      = aws_vpc.vpc.id
   tags  = {
-    Name		  = "controller_vpc-igw"
+    Name		  = "${var.resource_name_label}_controller-igw"
   }
 }
 
@@ -30,7 +30,7 @@ resource "aws_route_table" "public_rtb" {
     gateway_id  = aws_internet_gateway.igw.id
   }
   tags  = {
-    Name      = "controller_vpc-public_rtb"
+    Name      = "${var.resource_name_label}_controller-public_rtb"
   }
 }
 
@@ -39,7 +39,7 @@ resource "aws_route_table_association" "public_rtb_associate" {
   route_table_id  = aws_route_table.public_rtb.id
 }
 
-# Key pair is used for Aviatrix Controller and Windows instance
+# Key pair is used for Aviatrix Controller
 resource "aws_key_pair" "key_pair" {
   key_name        = "controller_ssh_key"
   public_key      = var.public_key
@@ -64,7 +64,7 @@ resource "aws_security_group" "sg" {
   cidr_blocks = [var.sg_source_ip]
   }
   tags  = {
-    Name      = "controller_vpc-security_group"
+    Name      = "${var.resource_name_label}_controller-security_group"
   }
 }
 

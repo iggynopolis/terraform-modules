@@ -178,11 +178,22 @@ variable "customer_id" {
 }
 
 # Windows instance
+variable "windows_vpc_cidr" {
+  type          = string
+  description   = "AWS VPC cidr being created for the Windows instance."
+}
+variable "windows_subnet_cidr" {
+  type          = string
+  description   = "Public subnet cidr of the vpc being created for the Windows instance."
+}
+variable "windows_public_key" {
+  type          = string
+  description   = "Public key to create a new key pair for the Windows instance."
+}
 variable "windows_sg_source_ip" {
   type          = string
   description   = "Source IP that Windows instance security group will allow."
 }
-
 variable "windows_ami" {
   type          = string
   description   = "Amazon Machine Id for the windows instance to be created."

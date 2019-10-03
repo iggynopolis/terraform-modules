@@ -32,12 +32,18 @@ provider "aws" {
   secret_key    = var.aws_primary_acct_secret_key
 }
 
-# This provider will also be used for the Windows instance
-# Windows instance will be launched in the same region as Aviatrix controller
 provider "aws" {
 	alias					= "controller"
 	version				= "~> 2.7"
 	region				= var.controller_region
+  access_key    = var.aws_primary_acct_access_key
+  secret_key    = var.aws_primary_acct_secret_key
+}
+
+provider "aws" {
+	alias					= "windows"
+	version				= "~> 2.7"
+	region				= var.windows_region
   access_key    = var.aws_primary_acct_access_key
   secret_key    = var.aws_primary_acct_secret_key
 }
@@ -140,13 +146,13 @@ module "aviatrix-controller" {
 module "windows-instance" {
   source        = "./modules/testbed-windows-instance"
   providers = {
-    aws = aws.controller
+    aws = aws.windows
   }
-  vpc           = module.aviatrix-controller.vpc
-  subnet        = module.aviatrix-controller.subnet
-  sg_source_ip  = var.windows_sg_source_ip
-  windows_ami   = var.windows_ami
-  keypair       = module.aviatrix-controller.keypair_name
+  vpc_cidr       	= var.windows_vpc_cidr
+  subnet_cidr     = var.windows_subnet_cidr
+  public_key      = var.windows_public_key
+  sg_source_ip  	= var.windows_sg_source_ip
+  ami   					= var.windows_ami
   termination_protection = var.termination_protection
 	resource_name_label		 = var.resource_name_label
 }
