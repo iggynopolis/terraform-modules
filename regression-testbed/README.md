@@ -14,14 +14,14 @@ This folder contains instructions and modules to create a Regression Testbed usi
 ### Available Modules
 | Module  | Description | Prerequisites |
 | ------- | ----------- | ------------- |
-| [testbed-aviatrix-accounts](./testbed-aviatrix-accounts) | Creates Aviatrix access accounts | <ul><li>Aviatrix Controller</li> |
+| [testbed-aviatrix-accounts](./testbed-aviatrix-accounts) | Creates Aviatrix access accounts | <ul><li>Aviatrix Controller</li></ul> |
 | [testbed-aviatrix-controller](./testbed-aviatrix-controller) | Builds and initializes an Aviatrix controller in an AWS VPC | <ul><li>Existing VPC,</li><li>Public subnet,</li><li>An AWS Key Pair,</li><li>IAM roles created</li></ul> |
-| [testbed-basic](./testbed-basic) | Creates an AWS VPC testbed environment. Optionally builds and initializes Aviatrix controller. Optionally creates windows instance for RDP. | <ul><li>Public Key</li> |
-| [testbed-onprem](./testbed-onprem) | Sets up an Aviatrix site2cloud connection with AWS VGW and onprem. | <ul><li>Public Key</li> |
-| [testbed-vnet-arm](./testbed-vnet-arm) | Creates an Azure RM VNET testbed environment | <ul><li>Public Key</li> |
-| [testbed-vpc-aws](./testbed-vpc-aws) | Creates an AWS VPC testbed environment | <ul><li>Public Key</li> |
-| [testbed-vpc-gcp](./testbed-vpc-gcp) | Creates a GCP VPC testbed environment | <ul><li>Public Key</li> |
-| [testbed-windows-instance](./testbed-windows-instance) | Creates an AWS VPC to launch a windows instance for RDP | <ul><li>Public Key</li> |
+| [testbed-basic](./testbed-basic) | Creates an AWS VPC testbed environment. Optionally builds and initializes Aviatrix controller. Optionally creates windows instance for RDP. | <ul><li>Public Key,</li><li>IAM roles created,</li><li>AWS account</li></ul> |
+| [testbed-onprem](./testbed-onprem) | Sets up an Aviatrix site2cloud connection with AWS VGW and onprem. | <ul><li>Public Key,</li><li>Aviatrix controller,</li><li>AWS account</li></ul> |
+| [testbed-vnet-arm](./testbed-vnet-arm) | Creates an Azure RM VNET testbed environment | <ul><li>Public Key,</li><li>Azure RM account</li></ul> |
+| [testbed-vpc-aws](./testbed-vpc-aws) | Creates an AWS VPC testbed environment | <ul><li>Public Key,</li><li>AWS account</li></ul> |
+| [testbed-vpc-gcp](./testbed-vpc-gcp) | Creates a GCP VPC testbed environment | <ul><li>Public Key,</li><li>GCP account</li></ul> |
+| [testbed-windows-instance](./testbed-windows-instance) | Creates an AWS VPC to launch a windows instance for RDP | <ul><li>Public Key,</li><li>AWS account</li></ul> |
 
 
 ### Usage
