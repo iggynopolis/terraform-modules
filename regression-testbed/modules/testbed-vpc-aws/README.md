@@ -7,7 +7,7 @@ This Terraform module creates an AWS VPC for the Regression Testbed environment.
 To create a filled AWS VPC:
 ```
 module "aws-vpc" {
-  source          	  = "./modules/testbed-vpcs"
+  source          	  = "./modules/testbed-vpc-aws"
   vpc_count	        	= "<<insert amount of vpcs>> ie: 2"
   resource_name_label	= "<<insert label name>>"
   pub_hostnum		      = "<<insert host number part>>"

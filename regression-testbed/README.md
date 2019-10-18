@@ -11,27 +11,39 @@ This folder contains instructions and modules to create a Regression Testbed usi
 ### Set up Environment and Install terraform
 - To download and install Terraform, follow the Step 1 of the [Terraform tutorial on the Aviatrix documentation page](https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html).
 
+### Available Modules
+| Module  | Description | Prerequisites |
+| ------- | ----------- | ------------- |
+| [testbed-aviatrix-accounts](./testbed-aviatrix-accounts) | Creates Aviatrix access accounts | <ul><li>Aviatrix Controller</li> |
+| [testbed-aviatrix-controller](./testbed-aviatrix-controller) | Builds and initializes an Aviatrix controller in an AWS VPC | <ul><li>Existing VPC,</li><li>Public subnet,</li><li>An AWS Key Pair,</li><li>IAM roles created</li></ul> |
+| [testbed-basic](./testbed-basic) | Creates an AWS VPC testbed environment. Optionally builds and initializes Aviatrix controller. Optionally creates windows instance for RDP. | <ul><li>Public Key</li> |
+| [testbed-onprem](./testbed-onprem) | Sets up an Aviatrix site2cloud connection with AWS VGW and onprem. | <ul><li>Public Key</li> |
+| [testbed-vnet-arm](./testbed-vnet-arm) | Creates an Azure RM VNET testbed environment | <ul><li>Public Key</li> |
+| [testbed-vpc-aws](./testbed-vpc-aws) | Creates an AWS VPC testbed environment | <ul><li>Public Key</li> |
+| [testbed-vpc-gcp](./testbed-vpc-gcp) | Creates a GCP VPC testbed environment | <ul><li>Public Key</li> |
+| [testbed-windows-instance](./testbed-windows-instance) | Creates an AWS VPC to launch a windows instance for RDP | <ul><li>Public Key</li> |
+
+
 ### Usage
 Look into the "examples" folder for example .tf files
 
 There are 3 Phases:
-1. Regression Baseline create
- - AWS VPC's in each US region.
- - Aviatrix Controller (optional)
- - Windows instance (optionl)
- - Read the testbed-basic README.md for more information
- - **initial terraform apply**
+- **1st:** Regression Baseline create
+  - AWS VPC's in each US region.
+  - Aviatrix Controller (optional)
+  - Windows instance (optionl)
+  - Read the testbed-basic README.md for more information
+  - initial `terraform apply`
 
-2. Add Cross AWS/Azure RM vpcs.
- - **optional, uncomment  cross aws/arm modules and outputs to use**
+- **2nd:** Add Cross AWS/Azure RM vpcs.
+  - **optional**, uncomment  cross aws/arm modules and outputs to use
 
-3. Aviatrix tests
- - Add Aviatrix access accounts to Aviatrix controller
- - Aviatrix onprem simulation
- - **uncomment Aviatrix modules and outputs**
- - **terraform init**
- - **2nd terraform apply**
-
+- **3rd:** Aviatrix tests
+  - Add Aviatrix access accounts to Aviatrix controller
+  - Aviatrix onprem simulation
+  - **uncomment Aviatrix modules and outputs**
+  - `terraform init`
+  - `terraform apply` again
 
 ### Notes
 
