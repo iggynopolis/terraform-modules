@@ -106,7 +106,7 @@ module "testbed-basic" {
 #	secret_key    				 = ""
 #}
 #module "aws-cross-acct" {
-#  source                 = "./regression-testbed/modules/testbed-vpcs"
+#  source                 = "./regression-testbed/modules/testbed-vpc-aws"
 #  providers = {
 #    aws = aws.cross_aws_acc
 #  }
