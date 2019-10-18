@@ -55,7 +55,7 @@ provider "aviatrix" {
 }
 
 module "aws-vpc-west1" {
-  source                = "../testbed-vpcs"
+  source                = "../testbed-vpc-aws"
   providers = {
     aws = aws.west1
   }
@@ -76,7 +76,7 @@ module "aws-vpc-west1" {
 }
 
 module "aws-vpc-west2" {
-  source                = "../testbed-vpcs"
+  source                = "../testbed-vpc-aws"
   providers = {
     aws = aws.west2
   }
@@ -97,7 +97,7 @@ module "aws-vpc-west2" {
 }
 
 module "aws-vpc-east1" {
-  source                = "../testbed-vpcs"
+  source                = "../testbed-vpc-aws"
   providers = {
     aws = aws.east1
   }
@@ -118,7 +118,7 @@ module "aws-vpc-east1" {
 }
 
 module "aws-vpc-east2" {
-  source                = "../testbed-vpcs"
+  source                = "../testbed-vpc-aws"
   providers = {
     aws = aws.east2
   }
