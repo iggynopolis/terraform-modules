@@ -150,6 +150,37 @@ module "testbed-basic" {
 #	public_key 						= local.public_key
 #}
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Cisco Cloud Services Router in AWS VPC
+# - VPCs with CSR instances in specified region
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#provider "aws" {
+#  version       = "~> 2.7"
+#	alias 				= "csr"
+#  region        = "us-west-2"
+#  access_key    = "AKIAJIBR4HWE337QM7EA"
+#  secret_key    = "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"
+#}
+#
+#module "testbed-csr" {
+#  source          	    = "../../terraform-modules/regression-testbed/modules/testbed-csr"
+#  providers = {
+#    aws = aws.csr
+#  }
+#  vpc_count	        	= 1
+#  resource_name_label	= local.resource_name_label
+#	pub_hostnum		      = local.pub_hostnum
+#  vpc_cidr        	  = ["10.88.0.0/16"]
+#  pub_subnet1_cidr    = ["10.88.1.0/24"]
+#  pub_subnet2_cidr    = ["10.88.2.0/24"]
+#  pri_subnet_cidr     = ["10.88.3.0/24"]
+#  pub_subnet1_az    	= ["us-west-2b"]
+#  pub_subnet2_az    	= ["us-west-2b"]
+#  pri_subnet_az     	= ["us-west-2c"]
+#  public_key      	  = local.public_key
+#	termination_protection = local.termination_protection
+#}
+
 ## Leave following provider/module commented before initial terraform apply.
 ## After successful terraform apply, uncomment.
 

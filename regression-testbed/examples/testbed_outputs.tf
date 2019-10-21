@@ -103,9 +103,33 @@ output "windows_key" {
 #  ]
 #}
 #
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Aviatrix Onprem Module
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Cisco Cloud Services Router in AWS VPC (Optional)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#output "csr_vpc_info" {
+#	value = [
+#    module.testbed-csr.vpc_name,
+#    module.testbed-csr.vpc_id
+#  ]
+#}
+#output "csr_subnet_info" {
+#	value = [
+#    module.testbed-csr.subnet_name,
+#    module.testbed-csr.subnet_cidr
+#  ]
+#}
+#output "csr_instance_info" {
+#	value = [
+#    module.testbed-csr.csr_name,
+#    module.testbed-csr.csr_id,
+#    module.testbed-csr.csr_public_ip,
+#    module.testbed-csr.csr_private_ip
+#  ]
+#}
+#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Aviatrix Onprem Module
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #output "onprem_vpc_info" {
 #  value = module.testbed-onprem.onprem_vpc_info
 #}
