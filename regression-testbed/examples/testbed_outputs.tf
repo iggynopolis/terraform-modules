@@ -102,10 +102,58 @@ output "windows_key" {
 #    module.arm-vnet.ubuntu_private_ip
 #  ]
 #}
-#
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## Aviatrix Onprem Module
-## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Google Cloud Project (Optional)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#output "gcp_vpc_info" {
+#  value = [
+#    module.testbed-gcp.vpc_name,
+#    module.testbed-gcp.vpc_id
+#  ]
+#}
+#output "gcp_subnet_info" {
+#	value = [
+#    module.testbed-gcp.subnet_name,
+#    module.testbed-gcp.subnet_cidr
+#  ]
+#}
+#output "gcp_ubuntu_info" {
+#	value = [
+#    module.testbed-gcp.ubuntu_name,
+#    module.testbed-gcp.ubuntu_id,
+#    module.testbed-gcp.ubuntu_public_ip,
+#    module.testbed-gcp.ubuntu_private_ip
+#  ]
+#}
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Cisco Cloud Services Router in AWS VPC (Optional)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#output "csr_vpc_info" {
+#	value = [
+#    module.testbed-csr.vpc_name,
+#    module.testbed-csr.vpc_id
+#  ]
+#}
+#output "csr_subnet_info" {
+#	value = [
+#    module.testbed-csr.subnet_name,
+#    module.testbed-csr.subnet_cidr
+#  ]
+#}
+#output "csr_instance_info" {
+#	value = [
+#    module.testbed-csr.csr_name,
+#    module.testbed-csr.csr_id,
+#    module.testbed-csr.csr_public_ip,
+#    module.testbed-csr.csr_private_ip
+#  ]
+#}
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Aviatrix Onprem Module
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #output "onprem_vpc_info" {
 #  value = module.testbed-onprem.onprem_vpc_info
 #}
